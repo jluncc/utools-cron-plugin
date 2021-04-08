@@ -1,0 +1,17 @@
+{
+	"pluginName": "cron-plugin",
+	"description": "查询 cron 表达式接下来 10 次的执行时间",
+	"author": "jluncc",
+	"homepage": "",
+	"main": "index.html",
+  "preload": "preload.js",
+	"logo": "utools-cron-plugin-logo.png",
+	"version": "0.0.1",
+	"features": [
+		{
+		  "code": "core",
+		  "explain": "cron-plugin",
+			"cmds": ["cron"]
+		}
+	]
+}
