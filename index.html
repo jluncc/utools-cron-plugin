@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <html>
   <body>
-    hello world
+    <div id="resultNode"></div>
   </body>
+
+  <script>
+    window.utools.onPluginReady(() => {
+      console.log("插件已准备好");
+      
+      utools.setSubInput(({text}) => {
+        var rNode = document.getElementById("resultNode");
+        rNode.innerHTML = "";
+
+        const result = window.checkCron(text.trim());
+        if (result.length === 1) {
+          var p = document.createElement("p");
+          var timeTxt = document.createTextNode(result[0]);
+          p.appendChild(timeTxt);
+          rNode.appendChild(p);
+        } else {
+          for (let i = 0; i < result.length; i++) {
+            var p = document.createElement("p");
+            var timeTxt = document.createTextNode(result[i]);
+            p.appendChild(timeTxt);
+            rNode.appendChild(p);
+          }
+        }
+      }, '输入 cron 表达式');
+    });
+  </script>
 </html>
