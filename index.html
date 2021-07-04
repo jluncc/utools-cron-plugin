@@ -12,18 +12,19 @@
         var rNode = document.getElementById("resultNode");
         rNode.innerHTML = "";
 
+        // * 0 18 4 7 *
         const result = window.checkCron(text.trim());
         if (result.length === 1) {
-          var p = document.createElement("p");
+          var divNode = document.createElement("div");
           var timeTxt = document.createTextNode(result[0]);
-          p.appendChild(timeTxt);
-          rNode.appendChild(p);
+          divNode.appendChild(timeTxt);
+          rNode.appendChild(divNode);
         } else {
           for (let i = 0; i < result.length; i++) {
-            var p = document.createElement("p");
+            var divNode = document.createElement("div");
             var timeTxt = document.createTextNode(result[i]);
-            p.appendChild(timeTxt);
-            rNode.appendChild(p);
+            divNode.appendChild(timeTxt);
+            rNode.appendChild(divNode);
           }
         }
       }, '输入 cron 表达式');
